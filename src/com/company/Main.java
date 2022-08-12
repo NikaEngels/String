@@ -27,7 +27,8 @@ public class Main {
 
 
         OurString str3 = new OurString(str2);
-        //System.out.println(str3.hashCode());
+        System.out.println(str2.subString(1));
+     //   System.out.println(str2.conteins(str4));
         //System.out.println(str3.indexOf('d') == 0);
         //System.out.println(str2.charAt(5));
 
