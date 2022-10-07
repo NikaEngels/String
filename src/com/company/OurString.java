@@ -1,5 +1,8 @@
 package com.company;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class OurString {
 
     private char[] str;
@@ -18,7 +21,6 @@ public class OurString {
     //Конструктор копирования
     public OurString(OurString зук) {
         this.str = зук.str;
-
         this.len = str.length;
     }
 
@@ -105,21 +107,51 @@ public class OurString {
 
     //Заменяет подстроку в текущей строке
     public OurString replace(OurString currentStr, OurString endStr) {
+        if (contains(currentStr)){
 
+            for(int i = 0; i < len;i++){
+                if(this.str[i] == currentStr.charAt(i)){
+                    this.str[i] = endStr.charAt(i);
+
+                    return new OurString(this.str);
+                }
+            }
+        }
         return null;
     }
 
-    public OurString conteins(OurString str) {
-        String stroke = String.valueOf(str);
-        for (int i = 0; i < str.len; i++) {
-            for (int j = 0; j < str.len; j++) {
-                if (this.str[i] == stroke.charAt(j)) {
-                    
-                }
+    public boolean contains(OurString str) {
+        int length = this.str.length;
 
+        for (int i = 0; i < length; i++) {
+          int count = 0;
+
+            if(i + str.len >= length){
+                return false;
             }
+
+            for (int j = 0; j < str.len; j++) {
+
+                if (this.str[i + j] == str.charAt(j)) {
+                    count += 1;
+
+
+
+
+                    if(count == str.len){
+                        return true;
+                    }
+
+                } else {
+                    break;
+
+                }
+            }
+
         }
+        return false;
     }
+
 
 
 
@@ -136,7 +168,10 @@ public class OurString {
     }
 
     //Rezhet stroku po stroke i vozvrashaet massiv (simvol virezaet)
-    public OurString[] split (OurString str,char symb){
+    public OurString[] split (char symb){
+
+
+
         return null;
     }
 
@@ -168,8 +203,7 @@ public class OurString {
         char[] count = new char[str.length];
         int j = str.length - 1;
         for (int i = 0; i < str.length; i++) {
-            count[i] = str[j];
-            j--;
+            count[i] = str[j--];
         }
 
         return new OurString(count);

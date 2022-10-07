@@ -16,8 +16,9 @@ public class Main {
       //  System.out.println(str1);
        // System.out.println(str1.getLength());
 
-        OurString str2 = new OurString("Maase");
-        OurString str4 = new OurString("Light");
+        OurString str5 = new OurString("77");
+        OurString str2 = new OurString("767б77");
+        OurString str4 = new OurString("e");
         //System.out.println(str2.indexOf('d') == 0);
         //System.out.println(str2.getLength());
         System.out.println(str2.equals(str4));
@@ -27,8 +28,9 @@ public class Main {
 
 
         OurString str3 = new OurString(str2);
-        System.out.println(str2.subString(1));
-     //   System.out.println(str2.conteins(str4));
+
+       System.out.println(str2.contains(str5));
+    //    System.out.println(str2.replace(str5,str4));
         //System.out.println(str3.indexOf('d') == 0);
         //System.out.println(str2.charAt(5));
 
